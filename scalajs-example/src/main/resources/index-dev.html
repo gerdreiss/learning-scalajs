@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example Scala.js application</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </style>
+</head>
+
+<body style="margin: 20px">
+
+  <div class="container bg-faded">
+    <h1 class="text-center">Scala.js Example</h1>
+    <hr/>
+    <div class="row">
+      <div class="col text-center">
+        <div class="mx-auto w-50 p-3 bg-dark">
+          <canvas class="mx-auto w-50 p-3 bg-dark text-white text-center" id="canvas" width="255" height="255" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../example-fastopt.js"></script>
+  <script type="text/javascript" src="/workbench.js"></script>
+  <script>
+    example.main(document.getElementById('canvas'));
+  </script>
+</body>
+
+</html>
