@@ -1,9 +1,9 @@
 package example
-import scala.scalajs.js.annotation.JSExport
+
 import org.scalajs.dom
 import org.scalajs.dom.html
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 import scala.util.Random
-import scala.scalajs.js.annotation.JSExportTopLevel
 
 case class Point(x: Int, y: Int) {
   def +(p: Point) = Point(x + p.x, y + p.y)
@@ -21,24 +21,24 @@ object ScalaJSExample {
 
     var count = 0
     var p = Point(0, 0)
-    val corners = Seq(Point(255, 255), Point(0, 255), Point(128, 0))
+    val corners = List(Point(512, 512), Point(0, 512), Point(255, 0))
 
     def clear() = {
       ctx.fillStyle = "black"
-      ctx.fillRect(0, 0, 255, 255)
+      ctx.fillRect(0, 0, 512, 512)
     }
 
     def run = for (i <- 0 until 10) {
-      if (count % 3000 == 0) clear()
+      if (count % 5000 == 0) clear()
       count += 1
       p = (p + corners(Random.nextInt(3))) / 2
 
-      val height = 512.0 / (255 + p.y)
+      val height = 1024.0 / (512 + p.y)
       val r = (p.x * height).toInt
-      val g = ((255 - p.x) * height).toInt
+      val g = ((512 - p.x) * height).toInt
       val b = p.y
-      ctx.fillStyle = s"rgb($g, $r, $b)"
 
+      ctx.fillStyle = s"rgb($g, $r, $b)"
       ctx.fillRect(p.x, p.y, 1, 1)
     }
 
