@@ -1,4 +1,7 @@
 target/
+.bsp/
+.vscode/
+.history/
 .cache
 .classpath
 .project
