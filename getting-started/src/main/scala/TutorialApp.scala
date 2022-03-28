@@ -1,8 +1,6 @@
-package tutorial.webapp
-
 import org.scalajs.dom
 import org.scalajs.dom.document
-import scala.scalajs.js.annotation.JSExportTopLevel
+
 
 object TutorialApp:
   def main(args: Array[String]): Unit =
@@ -18,15 +16,17 @@ object TutorialApp:
       "click",
       (e: dom.MouseEvent) => addClickedMessage()
     )
-    document.body.appendChild(button)
-    appendPar(document.body, "Hello World")
 
-  def appendPar(targetNode: dom.Node, text: String): Unit =
     val parNode = document.createElement("p")
-    parNode.textContent = text
-    targetNode.appendChild(parNode)
+    parNode.textContent = "Hello World"
+
+    document.body.appendChild(button)
+    document.body.appendChild(parNode)
 
   // only necessary if the button is created directly in HTML:
-  //  @JSExportTopLevel("addClickedMessage")
+  // import scala.scalajs.js.annotation.JSExportTopLevel
+  // @JSExportTopLevel("addClickedMessage")
   def addClickedMessage(): Unit =
-    appendPar(document.body, "You clicked the button!")
+    val parNode = document.createElement("p")
+    parNode.textContent = "You clicked the button!"
+    document.body.appendChild(parNode)
