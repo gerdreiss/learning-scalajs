@@ -11,7 +11,7 @@ lazy val root = project
     jsEnv                           := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv(),
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.1.0",
-      "com.lihaoyi"  %%% "utest"       % "0.7.4" % "test"
+      "com.lihaoyi"  %%% "utest"       % "0.7.11" % Test
     ),
     testFrameworks += new TestFramework("utest.runner.Framework")
   )
