@@ -1,4 +1,4 @@
-val scala3Version = "3.1.1"
+val scala3Version = "3.1.2"
 
 lazy val root = project
   .in(file("."))
@@ -10,7 +10,7 @@ lazy val root = project
     scalaJSUseMainModuleInitializer := true,
     jsEnv                           := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv(),
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.1.0",
+      "org.scala-js" %%% "scalajs-dom" % "2.2.0",
       "com.lihaoyi"  %%% "utest"       % "0.7.11" % Test
     ),
     testFrameworks += new TestFramework("utest.runner.Framework")
